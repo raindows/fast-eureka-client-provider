@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version
  */
 @RestController
-@RequestMapping(name="/provider")
+@RequestMapping(value = "/provider")
 public class HellowordController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(HellowordController.class);
@@ -35,7 +35,7 @@ public class HellowordController {
 	@Autowired
 	private DiscoveryClient discoveryClient; // 服务发现客户端
 
-	@GetMapping(name = "/hello")
+	@GetMapping(value = "/hello")
 	public String hello() {
 		ServiceInstance instance = serviceInstance();
 		LOG.info("provider service, host = " + instance.getHost() + ", service_id = " + instance.getServiceId());
